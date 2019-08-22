@@ -163,6 +163,9 @@ public class translate {
 					punct = true;
 				}
 				if ((str.length() == 1 && (Character.isWhitespace(str.charAt(0)) || !Character.isLetterOrDigit(str.charAt(0)))) || str.length()==0) System.out.print(str); //don't do anything for whitespace or empty lines
+				else if (str.length()>0 && Character.isDigit(str.charAt(0)) && Character.isDigit(str.charAt(str.length()-1))) { //word probably is a number
+					System.out.print(str);
+				}
 				else if (str.contains("-")) { //split compund words
 					String [] parts = str.split("-");
 					for (int i=0; i< parts.length; i++) {
